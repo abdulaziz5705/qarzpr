@@ -12,6 +12,8 @@ class RegisterSerializer(serializers.ModelSerializer):
         model = UserModel
         fields = ['username', 'phone_number', 'password', 'confirm_password']
 
+
+
     def validate(self, attrs):
         password = attrs.get('password')
         confirm_password = attrs.get('confirm_password')
@@ -40,5 +42,12 @@ class LoginSerializer(serializers.Serializer):
     username = serializers.CharField(max_length=15)
     password = serializers.CharField(max_length=255)
 
+class UserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = UserModel
+        fields = "__all__"
 
-
+class UserSearchSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = UserModel
+        fields = ['username', 'id', 'first_name', 'last_name', 'email', 'phone_number']
