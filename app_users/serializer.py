@@ -50,4 +50,4 @@ class UserSerializer(serializers.ModelSerializer):
 class UserSearchSerializer(serializers.ModelSerializer):
     class Meta:
         model = UserModel
-        fields = ['username', 'id', 'first_name', 'last_name', 'email', 'phone_number']
+        fields = ['id', 'username', 'first_name', 'last_name', 'email', 'phone_number']
